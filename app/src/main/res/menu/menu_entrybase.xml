@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_showall"
+       android:title="全部词条库"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_find"
+        android:title="查询词条库"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_add"
+        android:title="新增词条库"
+        app:showAsAction="never"
+        />
+
+</menu>

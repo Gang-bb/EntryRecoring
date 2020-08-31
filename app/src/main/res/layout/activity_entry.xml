@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:waveview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EntryActivity"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+    <com.example.entryrecording.widget.MyToolBar
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="词条详情"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_Chinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="汉语"
+            android:background="@drawable/textview_border"
+            />
+
+        <Button
+            android:id="@+id/btn_English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_border"
+            android:text="国际音标" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/t_English"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:scrollbars="vertical"
+        android:text="I am Chinese"
+        android:textSize="15dp"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/t_Chinese"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
+        android:scrollbars="vertical"
+        android:text="我是中国人"
+        android:textSize="15dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.shuyu.waveview.AudioWaveView
+            android:id="@+id/audioWave_play"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            waveview:waveColor="#8B4513"
+            android:background="@drawable/textview_border"
+            android:visibility="gone"/>
+        <com.shuyu.waveview.AudioWaveView
+            android:id="@+id/audioWave"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            waveview:waveColor="#8B4513"
+            android:background="@drawable/textview_border"/>
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/Layout_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/file_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:text="file_name.mp4"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                />
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/current_progress_text_view"
+                    android:text="00:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:visibility="invisible"/>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_media_play"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:fabSize="mini"
+                     />
+
+
+                <TextView
+                    android:id="@+id/file_length_text_view"
+                    android:text="00:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_record_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="开始录音" />
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="暂停录音" />
+            <Button
+                android:id="@+id/btn_record_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="结束录音" />
+            <Button
+                android:id="@+id/btn_showSound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="打开录音" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="上一条" />
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="删除词条" />
+
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_test4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/textview_border"-->
+                <!--android:text="" />-->
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textview_border"
+                android:text="下一条" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
